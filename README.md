@@ -1,2 +1,2 @@
 # juliagnaranjo
-Pàgina Julia
+www.juliagnaranjo.com
