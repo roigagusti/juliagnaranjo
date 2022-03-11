@@ -1,9 +1,9 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="title" content="Julia G Naranjo">
-<meta name="keywords" content="Julia, Gonzalez, Naranjo, Copywriter, Avast, Won, Soon in Tokyo, DDB, Elisava, Publicidad, Agustí, Roig, Malaret, Aldasoro, Estructuras, Barcelona, Arquitecto"/>
-<meta name="description" content="Julia Naranjo is a creative copywriter based in Barcelona. Currently at DDB." />
+<meta name="title" content="Julia González Naranjo">
+<meta name="keywords" content="Julia, Gonzalez, González, Naranjo, Copy, Copywriter, Avast, Won, Soon in Tokyo, DDB, Elisava, Publicidad, Creatividad, Creativo, Creativa, Audi, Q3 Sportback, Blanquerna"/>
+<meta name="description" content="Julia González Naranjo is a creative copywriter based in Barcelona. Currently at DDB." />
 <meta name="author" content="Aldasoro">
 
 <link rel="apple-touch-icon" sizes="57x57" href="img/faviconimg/favicon/apple-icon-57x57.png">
