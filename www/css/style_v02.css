@@ -1,0 +1,316 @@
+/*
+# Author: Aldasoro
+# Template: Julia G. Naranjo
+# Version: 3.0
+# Copyright 2021 Aldasoro, inc.
+# www: http://www.julianaranjo.com
+
+
+Taula de continguts
+-------------------
+1.Base i fonts
+2.Estructura
+3.Header
+4.Content bàsic
+5.Projectes
+6.Footer
+
+/* ---------- 1. Base i fonts ---------- */
+@font-face {
+    font-family: 'Freight Big Light';
+    src: url('fonts/FreightBigLight.otf'); /* IE9 Compat Modes */
+    src: url('fonts/FreightBigLight.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Freight Big Light Italic';
+    src: url('fonts/FreightBigLightItalic.otf'); /* IE9 Compat Modes */
+    src: url('fonts/FreightBigLight.otfItalic?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Freight Text';
+    src: url('fonts/FreightText.otf'); /* IE9 Compat Modes */
+    src: url('fonts/FreightText.otfItalic?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Graphik-Light-Italic';
+    src: url('fonts/Graphik-Light-Italic.otf'); /* IE9 Compat Modes */
+    src: url('fonts/Graphik-Light-Italic.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Graphik-Regular';
+    src: url('fonts/Graphik-Regular.otf'); /* IE9 Compat Modes */
+    src: url('fonts/Graphik-Regular.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Graphik-Semibold';
+    src: url('fonts/Graphik-Semibold.otf'); /* IE9 Compat Modes */
+    src: url('fonts/Graphik-Semibold.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Graphik-Light';
+    src: url('fonts/Graphik-Light.otf'); /* IE9 Compat Modes */
+    src: url('fonts/Graphik-Light.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Romie-Regular';
+    src: url('fonts/Romie_Regular.otf'); /* IE9 Compat Modes */
+    src: url('fonts/Romie_Regular.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Orpheus';
+    src: url('fonts/Orpheus.otf'); /* IE9 Compat Modes */
+}
+
+/* ---------- 2. Estructura ---------- */
+body, header, .content{
+    background-color: #f5f5f5;
+    color: #000;
+}
+body {
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.0;
+}
+.projects-link{
+    display: block;
+    margin-top: 20px;
+}
+
+/* ---------- 4. Content bàsic ---------- */
+.content {
+    position: relative;
+    max-width: 1440px;
+    margin-left:auto;
+    margin-right:auto;
+    font-weight: 100;
+    color: #000;
+    box-sizing: border-box;
+    font-family: 'Graphik-Regular', Roboto, Verdana;
+}
+.left-blocked-20{
+    padding-right: 20%;
+}
+.presentacio{
+    margin-top: 150px;
+    font-size: 75px;
+    font-family:Freight Text,Freight Big Light, Verdana;
+}
+.link-experience{
+    margin-top: 50px;
+    font-size: 30px;
+}
+.link-experience a{
+    color: #000;
+    text-decoration: underline;
+    margin-top:20px;
+}
+.scroll-link{
+    cursor: pointer;
+    margin-top:20px;
+}
+/* ---------- 5. Projectes ---------- */
+section{
+    clear: both;
+    position: relative;
+}
+.projects{
+    font-size: 20px;
+}
+.projects-title{
+    margin-top: 200px;
+    font-size: 18px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+.projects-title span, .learnings-title span{
+    font-family: 'Graphik-Semibold', Roboto, Verdana;
+    filter: drop-shadow(0 20px 30px #28d8ff33);
+    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+}
+.morado{
+    background-image: linear-gradient(225deg, #ffbb28, #c403ff);
+}
+.left{
+    width: 50%;
+    float: left;
+}
+.right{
+    width: 50%;
+    float: right;
+}
+@media screen and (max-width: 600px) {
+    .left, .right {
+        width: 100%;
+    }
+}
+.project{
+    margin-bottom:60px;
+    width:90%;
+}
+.project-title{
+    font-size: 18px;
+    font-family: 'Graphik-Semibold', Roboto, Verdana;
+    margin-bottom:5px;
+}
+.project-subtitle{
+    font-size: 16px;
+    font-family: 'Graphik-Regular', Roboto, Verdana;
+}
+.project-title a, .project-subtitle a{
+    color: #000;
+    text-decoration: underline;
+}
+.project-description{
+    margin-top:10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-family: 'Graphik-Light-Italic', Roboto, Verdana;
+    text-align: justify;
+}
+.project-description a{
+    color: #000;
+    text-decoration: underline;
+}
+ul.project-tasks {
+    margin-left:0px;
+    padding-left:0px;
+    list-style-type: none;
+    font-size: 16px;
+    font-family: 'Graphik-Light-Italic', Roboto, Verdana;
+}
+ul.project-tasks li:before {
+    content: "-";
+    margin-right: 10px;
+}
+.project-brands{
+    margin-left:-5px;
+    margin-top:20px;
+    font-size: 16px;
+    font-family: 'Graphik-Semibold', Roboto, Verdana;
+}
+.project-brands a{
+    padding:10px;
+    text-decoration: none;
+    filter: drop-shadow(0 20px 30px #28d8ff33);
+    color: black;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    background-image: linear-gradient(225deg, #ffbb28, #c403ff);
+    cursor: pointer;
+}
+.project-brands a:hover::before{
+    content: "";
+    position: absolute;
+    top: 80%;
+    width: 80%;
+    left: 0;
+    height: 2px;
+    text-align: center;
+    border-radius: 2px;
+    background: linear-gradient(225deg, #ffbb28, #c403ff);
+    left: 10%;
+}
+/*.brand-link::before{
+    content: "";
+    position: absolute;
+    top: 80%;
+    width: 80%;
+    left: 0;
+    height: 2px;
+    text-align: center;
+    border-radius: 2px;
+    background: linear-gradient(225deg, #ffbb28, #c403ff);
+    left: 10%;
+}*/
+
+
+.education{
+    margin-top: 100px;
+}
+.learnings-title{
+    margin-top: 40px;
+    font-size: 18px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* ---------- 6. Footer ---------- */
+.footer{
+    height:200px;
+}
+
+/* ---------- 7. Projects page ---------- */
+.header{
+    display: inline;
+    color:#000;
+    font-size: 14px;
+}
+.nav-center{
+    text-align: center;
+}
+.header a{
+    color: #999;
+    fill: #999;
+    text-decoration: none;
+}
+.nav-right{
+    text-align: right;
+}
+.nav-right svg{
+    display: inline-block;
+    width: 20px;
+}
+/* transición a:hover a otro color durante 0.3s */
+.header a:hover{
+    color: #000;
+    fill: #000;
+    transition: 0.3s;
+}
+.pampallugues{
+    padding-right: 10px;
+    padding-top: 5px;
+    border-right: 2px solid #333;
+    animation: blink 1s infinite;
+    font-family: Freight Text,Freight Big Light, Verdana;
+    font-size: 40px;
+}
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Make the border transparent at 50% of the animation */    
+    }
+}
+.dashboard{
+    margin-top:20px;
+}
+.dashboard img{
+    width: 95%;
+}
+.dashboard span{
+    font-size: 14px;
+    font-family: Freight Text,Freight Big Light, Verdana;
+}
+#youtube{
+    width: 95%;
+    height: 300px;
+}
+.work-description{
+    width: 95%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: 'Graphik-Light', Roboto, Verdana;
+    text-align: justify;
+}
+.work-description span{
+    font-family: 'Graphik-Semibold', Roboto, Verdana;
+}
+.video-vimeo{
+    width: 95%;
+    height: auto;
+}

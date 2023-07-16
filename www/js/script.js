@@ -8,18 +8,22 @@
 
 Taula de continguts
 -------------------
-1. Email
+1. Scroll to experience
 */
 
-usuario="julia" 
-dominio="juliagnaranjo.com" 
-conector="@" 
-
-
-function correo(){ 
-   return usuario + conector + dominio 
-} 
-
-function enlace_correo(){ 
-   document.write("<a href='mailto:" + correo() + "'>" + correo() + "</a>") 
-}
+$(document).ready(function() {
+  $(".scroll-link").click(function(e) {
+      e.preventDefault();
+      var target = $("#see-experience");
+      $('html, body').animate({
+          scrollTop: target.offset().top
+      }, 1000);
+  });
+  $(".start-again").click(function(e) {
+      e.preventDefault();
+      var target = $("#top");
+      $('html, body').animate({
+          scrollTop: target.offset().top
+      }, 1000);
+  });
+});

@@ -2,8 +2,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="title" content="Julia González Naranjo">
-<meta name="keywords" content="Julia, Gonzalez, González, Naranjo, Copy, Copywriter, Avast, Won, Soon in Tokyo, DDB, Elisava, Publicidad, Creatividad, Creativo, Creativa, Audi, Q3 Sportback, Blanquerna"/>
-<meta name="description" content="Julia González Naranjo is a creative copywriter based in Barcelona. Currently at DDB." />
+<meta name="keywords" content="Julia, Gonzalez, González, Naranjo, Carloina Herrera, Marta Marín, Accenture, Banc Sabadell, Banco Sabadell, Copy, Copywriter, Avast, Won, Soon in Tokyo, DDB, Elisava, Publicidad, Creatividad, Creativo, Creativa, Audi, Q3 Sportback, Blanquerna"/>
+<meta name="description" content="Hello, I’m Julia, a Brand & Content designer at Accenture Song in Barcelona." />
 <meta name="author" content="Aldasoro">
 
 <link rel="apple-touch-icon" sizes="57x57" href="img/faviconimg/favicon/apple-icon-57x57.png">
@@ -22,4 +22,10 @@
 <link rel="manifest" href="img/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#f5f5f5"/>
+
+
+<meta name="application-name" content="Julia Naranjo" />
+<meta name="apple-mobile-web-app-title" content="Julia Naranjo" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">

@@ -1,2 +1,2 @@
-# Julia G Naranjo
-www.juliagnaranjo.com
+# Julia Naranjo
+www.julianaranjo.com
