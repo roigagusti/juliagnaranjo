@@ -1,0 +1,38 @@
+/*
+# Author: Aldasoro
+# Template: Julia G. Naranjo
+# Version: 3.0
+# Copyright 2021 Aldasoro, inc.
+# www: http://www.julianaranjo.com
+
+
+/* CSS code to change the top color on an iPhone */
+@media only screen and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) {
+    /* Select the status bar */
+    /* Set the background color */
+    /* Set the font color */
+    /* Set the height */
+   :root {
+     --status-bar-color: #df0000;
+     --status-bar-text-color: #000000;
+     --status-bar-height: 44px;
+   }
+ 
+   /* Apply the status bar styles */
+   /* Set the background color */
+   /* Set the font color */
+   /* Set the height */
+   /* Set the padding to position the content below the status bar */
+   body {
+     padding-top: var(--status-bar-height);
+   }
+   #status-bar {
+     background-color: var(--status-bar-color);
+     color: var(--status-bar-text-color);
+     height: var(--status-bar-height);
+     position: fixed;
+     top: 0;
+     width: 100%;
+   }
+ }
+ 
