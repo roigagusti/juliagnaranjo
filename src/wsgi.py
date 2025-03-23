@@ -2,7 +2,7 @@ from gunicorn.app.base import BaseApplication
 from app import app
 
 if __name__ == "__main__":
-    # app.run(host='0.0.0.0', port=80)  # Comenta o elimina esta línea
+    app.run(host='0.0.0.0', port=5000)
 
     class FlaskApplication(BaseApplication):
         def __init__(self, app, options=None):
