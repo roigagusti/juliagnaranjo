@@ -50,5 +50,5 @@ jobs:
             # Run the new container
             docker run -d \
               --name julianaranjo \
-              -p 8012:80 \
+              -p 8012:5000 \
               roigagusti/julianaranjo:latest
