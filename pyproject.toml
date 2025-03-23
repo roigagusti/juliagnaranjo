@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "julianaranjo"
+version = "0.2.0"
+description = "Portfoli juli Naranjo"
+authors = ["Agustí Roig <agusti.roig@icloud.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = "^3.0.0"
+gunicorn = "^23.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api" 
