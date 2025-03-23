@@ -51,6 +51,6 @@ jobs:
             docker run -d \
               --name julianaranjo \
               -p 8012:5000 \
-              -e FLASK_APP=app \
+              -e FLASK_APP=wsgi.py \
               -e FLASK_RUN_HOST=0.0.0.0 \
               roigagusti/julianaranjo:latest
