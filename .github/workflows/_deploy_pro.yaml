@@ -15,6 +15,14 @@ on:
         required: true
       SSH_PORT:
         required: true
+      NOTION_AUTH_TOKEN:
+        required: true
+      MAIN_DB_ID:
+        required: true
+      EXP_DB_ID:
+        required: true
+      PROJECT_DB_ID:
+        required: true
 
 jobs:
   deploy:
@@ -50,5 +58,12 @@ jobs:
             # Run the new container
             docker run -d \
               --name julianaranjo \
-              -p 8012:80 \
-              roigagusti/julianaranjo:latest
+              -p 8012:5000 \
+              -e FLASK_APP=wsgi.py \
+              -e FLASK_RUN_HOST=0.0.0.0 \
+              -e NOTION_AUTH_TOKEN=${{ secrets.NOTION_AUTH_TOKEN }} \
+              -e MAIN_DB_ID=${{ secrets.MAIN_DB_ID }} \
+              -e EXP_DB_ID=${{ secrets.EXP_DB_ID }} \
+              -e PROJECT_DB_ID=${{ secrets.PROJECT_DB_ID }} \
+              roigagusti/julianaranjo:latest \
+              poetry run flask run

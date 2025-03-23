@@ -1,4 +1,4 @@
-name: Deploy to staging
+name: Deploy to production
 
 on:
   workflow_dispatch:
@@ -20,3 +20,7 @@ jobs:
       SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
       SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
       SSH_PORT: ${{ secrets.SSH_PORT }}
+      NOTION_AUTH_TOKEN: ${{ secrets.NOTION_AUTH_TOKEN }}
+      MAIN_DB_ID: ${{ secrets.MAIN_DB_ID }}
+      EXP_DB_ID: ${{ secrets.EXP_DB_ID }}
+      PROJECT_DB_ID: ${{ secrets.PROJECT_DB_ID }}

@@ -1,26 +1,29 @@
 /*
-# Author: ldrs
-# Template: Hijos de Jose Maria
-# Version: 1.0
-# Copyright 2018 Aldasoro, Inc.
-# www: http://www.hijosdejosemaria.com
+# Author: Aldasoro
+# Template: Julia G. Naranjo
+# Version: 2.0
+# Copyright 2018 Aldasoro, inc.
+# www: http://www.agustiroig.com
 
 
 Taula de continguts
 -------------------
-1.None*/
+1. Scroll to experience
+*/
 
-function showContact(){
-  if($('div.compra-personalizada').hasClass('hidden')){
-    $('div.compra-personalizada').removeClass('hidden');
-  }else{
-    $('div.compra-personalizada').addClass('hidden');
-  }
-}
-
-document.getElementById("hjmEmail").onclick = function() {
-    window.location.replace('mailto:"hijosdejosemaria@gmail.com"?subject=Contacto web');
-}
-document.getElementById("hjmLlamar").onclick = function() {
-    window.location.replace('tel:+34‭687401970‬');
-}
+$(document).ready(function() {
+  $(".scroll-link").click(function(e) {
+      e.preventDefault();
+      var target = $("#see-experience");
+      $('html, body').animate({
+          scrollTop: target.offset().top
+      }, 1000);
+  });
+  $(".start-again").click(function(e) {
+      e.preventDefault();
+      var target = $("#top");
+      $('html, body').animate({
+          scrollTop: target.offset().top
+      }, 1000);
+  });
+});

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Work{% endblock %}
+
+{% block content %}
+<div class="content">
+  <!-- Cabecera de Projects -->
+  <section class="header-projects">
+    <div class="row">
+      <div class="col-md-2 nav-left">
+        <a href="/">← Back</a>
+      </div>
+      <div class="col-md-8 nav-center">
+        <span class="logo-pampallugues">Julia Naranjo</span>
+      </div>
+      <div class="col-md-2 nav-right say-hello">
+        <a class="button" href="https://www.linkedin.com/in/julia-gnaranjo/" target="_blank">
+          Say hello
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Projects -->
+  <section class="projects dashboard">
+    <!-- Columna Izquierda -->
+    <div class="work left">
+      {% for project in projects %}
+        {% if project.column == "Left" %}
+          {% if not on_julia or project.confidencialidad != "Hide" %}
+            {% include 'sections/partials.html' with context %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Columna Derecha -->
+    <div class="work right">
+      {% for project in projects %}
+        {% if project.column == "Right" %}
+          {% if not on_julia or project.confidencialidad != "Hide" %}
+            {% include 'sections/partials.html' with context %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="footer"></section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Si requieres jQuery o scripts adicionales, puedes incluirlos aquí -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+{% endblock %}
