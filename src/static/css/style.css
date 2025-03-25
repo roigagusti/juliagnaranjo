@@ -34,7 +34,7 @@ Taula de continguts
 
 /* ---------- 2. Estructura ---------- */
 body, header, .content{
-    background-color: #f5f5f5;
+    background-color: #fff;
     color: #000;
 }
 body {
@@ -43,290 +43,152 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
 }
-
-/* ---------- 4. Content bàsic ---------- */
-.content {
-    position: relative;
-    max-width: 1440px;
-    margin-left:auto;
-    margin-right:auto;
-    font-weight: 100;
-    color: #000;
-    box-sizing: border-box;
-    font-size: 14px;
-    font-family: 'Graphik-Regular', Roboto, Verdana;
+.wrapper{
+    margin-left: 50px;
+    margin-right: 50px;
 }
-.presentacio{
-    margin-top: 130px;
-    font-size: 75px;
-    font-family:'Romie-Regular';
-}
-/* ---------- 5. Index ---------- */
-section{
-    clear: both;
-    position: relative;
-}
-.say-hello{
-    margin-top:20px;
-}
-.presentacio{
-    text-align: center;
-}
-.text-present{
-    font-size: 50px;
-}
-.text-center{
-    text-align: center;
-}
-.button{
-    color: #000 !important;
-    padding: 10px 20px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 14px;
-    border: 1px solid #000;
-    position: relative;
-    font-family: 'Graphik-Regular', Roboto, Verdana;
-}
-.button:hover{
-    background-color: #eaf566 !important;
-    /*top:10px;*/
-    transition: 0.3s;
-}
-.divertimento-circle{
-    margin-top:40px;
-}
-.circle-text{
-  fill: currentColor;
-  max-width: 100px;
-  transform-origin: center;
-}
-.circle-text text{
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 5.3px;
-}
-.link-experience{
-    margin-top:100px;
-}
-
-.experience, .learning{
-    margin-right:10%;
-    margin-left:10%;
-}
-#experience-main{
-    margin-top: 200px;
-}
-.learning{
-    margin-top: 50px;
-}
-.experience-title{
-    font-size: 26px;
-    font-family: 'Romie-Regular';
-    text-align: left;
-    text-transform: uppercase;
-    margin-bottom:25px;
-}
-.project{
-    margin-left:50px;
-    margin-right: 20px;
-    margin-bottom:60px;
-    font-family: 'Graphik-Light';
-}
-.project-title{
-    font-size: 16px;
-    font-family: 'Romie-Regular', Roboto, Verdana;
-    margin-bottom:10px;
-    text-transform: uppercase;
-}
-.project-title span{
-    background-color: #eaf566;
-}
-.project-description{
-    margin-top:10px;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.project-title a, .project-subtitle a, .project-description a, .project-url a{
-    color: #000;
-    text-decoration: underline;
-}
-ul.project-tasks {
-    margin-left:0px;
-    padding-left:0px;
-    list-style-type: none;
-}
-ul.project-tasks li:before {
-    content: "-";
-    margin-right: 10px;
-}
-
-/* ---------- 7. Footer ---------- */
-.footer{
-    height:200px;
-}
-.footer-index{
-    margin-top:150px;
-    height:50px;
-    text-align: center;
-}
-
-/* ---------- 7. Projects page ---------- */
-.left{
-    width: 50%;
-    float: left;
-}
-.right{
-    width: 50%;
-    float: right;
-}
-@media screen and (max-width: 600px) {
-    .left, .right {
-        width: 100%;
-    }
-}
-.header, .header-projects{
-    display: inline;
-    color:#000;
-    font-size: 14px;
-}
-.nav-left{
-    margin-top:20px;
-}
-.nav-center{
-    text-align: center;
-}
-.header a, .header-projects a{
-    color: #999;
-    fill: #999;
+a{
     text-decoration: none;
 }
-.nav-right{
-    text-align: right;
+
+/* ---------- 3. Header ---------- */
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 100;
 }
-.nav-right svg{
-    display: inline-block;
-    width: 20px;
+.header-logo {
+    font-size: 28px;
+    font-weight: 500;
 }
-/* transición a:hover a otro color durante 0.3s */
-.header a:hover, .header-projects a:hover{
+.header-nav a{
     color: #000;
     fill: #000;
-    transition: 0.3s;
 }
-.header-projects{
-    margin-bottom: 50px;
+.header-nav-item{
+    display: inline-block;
+    margin-left: 20px;
+    padding-bottom:5px;
+    vertical-align: super;
+}
+.header-nav-item.active{
+    border-bottom: 1px solid #000;
+}
+.header-nav a:hover{
+    color: #666;
+}
+.header-social-button svg:hover{
+    fill: #666;
+    cursor: pointer;
+}
+
+.header-social-button,
+.header-responsive{
+    display: inline-block;
+    margin-left: 50px;
+}
+.header-social-button svg,
+.header-responsive svg{
+    height: 25px;
+    width: 25px;
+}
+.header-responsive{
+    display: none;
+}
+.header-responsive svg{
+    stroke: #000;
+}
+
+.header-responsive-bars,
+.header-responsive-close{
+    stroke: #000;
+}
+.header-responsive>.header-responsive-bars{
+    display: inline;
+}
+.header-responsive-open>.header-responsive-bars{
+    display: none;
+}
+.header-responsive>.header-responsive-close{
+    display: none;
+}
+.header-responsive-open>.header-responsive-close{
+    display: inline;
+}
+
+.responsive-menu {
+    display: none;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 90;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.header.header-responsive-open .responsive-menu {
     display: block;
 }
-.logo-pampallugues{
-    padding-right: 10px;
-    padding-top: 5px;
-    border-right: 2px solid #333;
-    animation: blink 1s infinite;
-    font-family: 'Romie-Regular',Freight Text,Freight Big Light, Verdana;
-    font-size: 40px;
+.responsive-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-.pampallugues{
-    padding-right: 10px;
-    padding-top: 5px;
-    border-right: 2px solid #333;
-    animation: blink 1s infinite;
+.responsive-menu li {
+    margin: 20px 0;
 }
-@keyframes blink {
-    50% {
-        border-color: transparent; /* Make the border transparent at 50% of the animation */    
-    }
+.responsive-menu a {
+    color: #000;
+    font-size: 24px;
+    text-decoration: none;
 }
-.dashboard{
-    margin-top:20px;
-}
-.dashboard img{
-    width: 95%;
-}
-.dashboard span{
-    font-size: 14px;
-    font-family: Freight Text,Freight Big Light, Verdana;
-}
-#youtube{
-    width: 95%;
-    height: 300px;
-}
-.work-description{
-    width: 95%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    font-family: 'Graphik-Light', Roboto, Verdana;
-    text-align: justify;
-}
-.work-description span{
-    font-family: 'Graphik-Semibold', Roboto, Verdana;
-    text-transform: uppercase;
-}
-.video-vimeo{
-    width: 95%;
-    height: auto;
-}
-/*
-.thumbnail-vimeo{
-    position: absolute;
-    z-index:9;
-    width:100%;
-    height:100%;
-}
-.video-opac, .video-opac-1, .video-opac-2, .video-opac-3, .video-opac-4, .video-opac-5{
-    position: absolute;
-    z-index:8;
-    width:100%;
-    height:100%;
-    background-color: #000;
-}
-.play-video, .play-video-1, .play-video-2, .play-video-3, .play-video-4, .play-video-5{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background: transparent url('//mesuralcom.sharepoint.com///assets.squarespace.com/universal/images-v6/damask/play-button.png') center center no-repeat;
-    height: 48px;
-    width: 48px;
-    margin-left: -24px;
-    margin-top: -24px;
-    cursor: pointer;
-    z-index:10;
-}*/
 
-@-webkit-keyframes spinner-border {
-	to {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg)
-	}
+/* ---------- 4. Index ---------- */
+.index-description{
+    margin-top: 100px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
 }
-@keyframes spinner-border {
-	to {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg)
-	}
+
+/* ---------- 5. Projects ---------- */
+.projects{
+    margin-top: 60px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    height: calc(100vh - 225px);
+    overflow-y: auto;
+    scrollbar-width: none;      /* Oculta la barra en Firefox */
+    -ms-overflow-style: none;   /* Oculta la barra en IE 10+ */
 }
-.loader, .loading-text{
-    color: #999;
+.projects::-webkit-scrollbar {
+    display: none;
 }
-.loading-text{
-    margin-top: 10px;
+
+.project-card{
+    margin-bottom: 40px;
 }
-.spinner-border {
-	display: inline-block;
-	width: 2rem;
-	height: 2rem;
-	vertical-align: text-bottom;
-	border: .25em solid currentColor;
-	border-right-color: transparent;
-	border-radius: 50%;
-	-webkit-animation: spinner-border .75s linear infinite;
-	animation: spinner-border .75s linear infinite
+.project-title{
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom:5px;
+    font-weight: 400;
 }
-.spinner-border-sm {
-	width: 1rem;
-	height: 1rem;
-	border-width: .2em
+.project-description{
+    font-size: 16px;
+    line-height: 24px;
 }

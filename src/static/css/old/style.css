@@ -1,0 +1,332 @@
+/*
+# Author: Aldasoro
+# Template: Julia G. Naranjo
+# Version: 3.0
+# Copyright 2021 Aldasoro, inc.
+# www: http://www.julianaranjo.com
+
+
+Taula de continguts
+-------------------
+1.Base i fonts
+2.Estructura
+3.Header
+4.Content bàsic
+5.Projectes
+6.Footer
+
+/* ---------- 1. Base i fonts ---------- */
+@font-face {
+    font-family: 'Graphik-Regular';
+    src: url('fonts/Graphik-Regular.otf'); /* IE9 Compat Modes */
+    src: url('fonts/Graphik-Regular.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Graphik-Light';
+    src: url('fonts/Graphik-Light.otf'); /* IE9 Compat Modes */
+    src: url('fonts/Graphik-Light.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+@font-face {
+    font-family: 'Romie-Regular';
+    src: url('fonts/Romie_Regular.otf'); /* IE9 Compat Modes */
+    src: url('fonts/Romie_Regular.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+
+/* ---------- 2. Estructura ---------- */
+body, header, .content{
+    background-color: #f5f5f5;
+    color: #000;
+}
+body {
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 1.0;
+}
+
+/* ---------- 4. Content bàsic ---------- */
+.content {
+    position: relative;
+    max-width: 1440px;
+    margin-left:auto;
+    margin-right:auto;
+    font-weight: 100;
+    color: #000;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Graphik-Regular', Roboto, Verdana;
+}
+.presentacio{
+    margin-top: 130px;
+    font-size: 75px;
+    font-family:'Romie-Regular';
+}
+/* ---------- 5. Index ---------- */
+section{
+    clear: both;
+    position: relative;
+}
+.say-hello{
+    margin-top:20px;
+}
+.presentacio{
+    text-align: center;
+}
+.text-present{
+    font-size: 50px;
+}
+.text-center{
+    text-align: center;
+}
+.button{
+    color: #000 !important;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid #000;
+    position: relative;
+    font-family: 'Graphik-Regular', Roboto, Verdana;
+}
+.button:hover{
+    background-color: #eaf566 !important;
+    /*top:10px;*/
+    transition: 0.3s;
+}
+.divertimento-circle{
+    margin-top:40px;
+}
+.circle-text{
+  fill: currentColor;
+  max-width: 100px;
+  transform-origin: center;
+}
+.circle-text text{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 5.3px;
+}
+.link-experience{
+    margin-top:100px;
+}
+
+.experience, .learning{
+    margin-right:10%;
+    margin-left:10%;
+}
+#experience-main{
+    margin-top: 200px;
+}
+.learning{
+    margin-top: 50px;
+}
+.experience-title{
+    font-size: 26px;
+    font-family: 'Romie-Regular';
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom:25px;
+}
+.project{
+    margin-left:50px;
+    margin-right: 20px;
+    margin-bottom:60px;
+    font-family: 'Graphik-Light';
+}
+.project-title{
+    font-size: 16px;
+    font-family: 'Romie-Regular', Roboto, Verdana;
+    margin-bottom:10px;
+    text-transform: uppercase;
+}
+.project-title span{
+    background-color: #eaf566;
+}
+.project-description{
+    margin-top:10px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.project-title a, .project-subtitle a, .project-description a, .project-url a{
+    color: #000;
+    text-decoration: underline;
+}
+ul.project-tasks {
+    margin-left:0px;
+    padding-left:0px;
+    list-style-type: none;
+}
+ul.project-tasks li:before {
+    content: "-";
+    margin-right: 10px;
+}
+
+/* ---------- 7. Footer ---------- */
+.footer{
+    height:200px;
+}
+.footer-index{
+    margin-top:150px;
+    height:50px;
+    text-align: center;
+}
+
+/* ---------- 7. Projects page ---------- */
+.left{
+    width: 50%;
+    float: left;
+}
+.right{
+    width: 50%;
+    float: right;
+}
+@media screen and (max-width: 600px) {
+    .left, .right {
+        width: 100%;
+    }
+}
+.header, .header-projects{
+    display: inline;
+    color:#000;
+    font-size: 14px;
+}
+.nav-left{
+    margin-top:20px;
+}
+.nav-center{
+    text-align: center;
+}
+.header a, .header-projects a{
+    color: #999;
+    fill: #999;
+    text-decoration: none;
+}
+.nav-right{
+    text-align: right;
+}
+.nav-right svg{
+    display: inline-block;
+    width: 20px;
+}
+/* transición a:hover a otro color durante 0.3s */
+.header a:hover, .header-projects a:hover{
+    color: #000;
+    fill: #000;
+    transition: 0.3s;
+}
+.header-projects{
+    margin-bottom: 50px;
+    display: block;
+}
+.logo-pampallugues{
+    padding-right: 10px;
+    padding-top: 5px;
+    border-right: 2px solid #333;
+    animation: blink 1s infinite;
+    font-family: 'Romie-Regular',Freight Text,Freight Big Light, Verdana;
+    font-size: 40px;
+}
+.pampallugues{
+    padding-right: 10px;
+    padding-top: 5px;
+    border-right: 2px solid #333;
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Make the border transparent at 50% of the animation */    
+    }
+}
+.dashboard{
+    margin-top:20px;
+}
+.dashboard img{
+    width: 95%;
+}
+.dashboard span{
+    font-size: 14px;
+    font-family: Freight Text,Freight Big Light, Verdana;
+}
+#youtube{
+    width: 95%;
+    height: 300px;
+}
+.work-description{
+    width: 95%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-family: 'Graphik-Light', Roboto, Verdana;
+    text-align: justify;
+}
+.work-description span{
+    font-family: 'Graphik-Semibold', Roboto, Verdana;
+    text-transform: uppercase;
+}
+.video-vimeo{
+    width: 95%;
+    height: auto;
+}
+/*
+.thumbnail-vimeo{
+    position: absolute;
+    z-index:9;
+    width:100%;
+    height:100%;
+}
+.video-opac, .video-opac-1, .video-opac-2, .video-opac-3, .video-opac-4, .video-opac-5{
+    position: absolute;
+    z-index:8;
+    width:100%;
+    height:100%;
+    background-color: #000;
+}
+.play-video, .play-video-1, .play-video-2, .play-video-3, .play-video-4, .play-video-5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: transparent url('//mesuralcom.sharepoint.com///assets.squarespace.com/universal/images-v6/damask/play-button.png') center center no-repeat;
+    height: 48px;
+    width: 48px;
+    margin-left: -24px;
+    margin-top: -24px;
+    cursor: pointer;
+    z-index:10;
+}*/
+
+@-webkit-keyframes spinner-border {
+	to {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+@keyframes spinner-border {
+	to {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg)
+	}
+}
+.loader, .loading-text{
+    color: #999;
+}
+.loading-text{
+    margin-top: 10px;
+}
+.spinner-border {
+	display: inline-block;
+	width: 2rem;
+	height: 2rem;
+	vertical-align: text-bottom;
+	border: .25em solid currentColor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	-webkit-animation: spinner-border .75s linear infinite;
+	animation: spinner-border .75s linear infinite
+}
+.spinner-border-sm {
+	width: 1rem;
+	height: 1rem;
+	border-width: .2em
+}

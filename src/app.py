@@ -5,6 +5,7 @@ from context.services.experience_service import ExperienceService
 from context.services.project_service import ProjectService
 
 import os
+import json
 
 
 app = Flask(__name__)
@@ -19,11 +20,29 @@ main_service = MainService(notion_client, MAIN_DB_ID)
 experience_service = ExperienceService(notion_client, EXP_DB_ID)
 project_service = ProjectService(notion_client, PROJECT_DB_ID)
 
-
+# Simple page
 @app.route('/')
 def index():
+    return render_template('index.html', active="bio")
+
+@app.route('/work')
+def work():
+    with open('./static/data/work.json', 'r') as f:
+        work_data = json.load(f)
+    return render_template('work.html', active="work", projects=work_data)
+
+@app.route('/teach')
+def teach():
+    with open('./static/data/teach.json', 'r') as f:
+        teach_data = json.load(f)
+    return render_template('work.html', active="teach", projects=teach_data)
+
+
+# OLD Page
+@app.route('/home')
+def home():
     main_data = main_service.get_main()
-    return render_template('index.html', main=main_data)
+    return render_template('home.html', main=main_data)
 
 @app.route('/experience')
 def experience():

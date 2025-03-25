@@ -1,52 +1,17 @@
-{% extends "base.html" %}
+{% extends "template.html" %}
 
-{% block title %}Inicio{% endblock %}
+{% block title %}Julia Naranjo | Bio{% endblock %}
 
 {% block content %}
-<div id="top" class="content">
-    <section class="header">
-        <div class="row">
-            <div class="col-md-12 nav-right say-hello">
-                <a class="button" href="https://www.linkedin.com/in/julia-naranjo/" target="_blank">
-                    {{ main.contact }}
-                </a>
-            </div>
-        </div>
-    </section>
+<div class="wrapper">
+    {% include 'sections/header.html' %}
 
-    <section class="presentacio">
-        <div class="text-present">
-            {{ main.title | safe }} <span class="pampallugues"></span>
-        </div>
-        <div class="divertimento-circle">
-            <svg class="circle-text" viewBox="0 0 100 100" width="100" height="100">
-                <defs>
-                    <path id="circle" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/>
-                </defs>
-                <text>
-                    <textPath xlink:href="#circle">
-                        {{ main.basedin }}
-                    </textPath>
-                </text>
-            </svg>
-        </div>
-        <div class="link-experience">
-            <a class="scroll-link button" href="https://www.instagram.com/julianaranjo.g/">{{ main.experience }}</a>
-            <a class="projects-link button" href="/projects">{{ main.projects }}</a>
-        </div>
+    <section class="index-description">
+        I am co-director and professor of the Fashion Communication Master's program at the University of Barcelona. I have trained at the Ecole du Louvre (Paris), the Institut Français de la Mode (Paris), and the Elisava School of Design in Barcelona. Currently, I work as an independent consultant in communication and creative strategy, building internal teams and guiding brands in how they shape their narrative and cultural impact.<br><br>
+        I am particularly interested in the role of culture within a brand, from internal communication to brand cultural initiatives, which led me to coordinate and teach the Brand Culture postgraduate program at Elisava.
     </section>
-
-    <!--<div id="experience-main">
-        <div class="text-center">
-            <div class="spinner-border spinner-border-sm loader" role="status"></div>
-            <div class="loading-text">Charging my experience</div>
-        </div>-->
-    </div>
+    
 </div>
-
-<!--<section class="footer-index">
-    <a class="start-again button" href="#">{{ main.up }}</a>
-</section>-->
 {% endblock %}
 
 {% block extra_js %}

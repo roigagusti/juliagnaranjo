@@ -15,34 +15,40 @@ Taula de continguts
 
 /* ---------- 1. Large devices --------- */
 @media (max-width: 1475px) {
+    body{
+        margin:40px;
+    }
+    .dim{
+        width:80%;
+    }
 }
 
 /* ---------- 2. Medium devices ---------- */
 @media (max-width: 1170px) {
+    .experience-title{
+        font-size: 22px;
+    }
 }
 
 /* ---------- 3. Small devices ---- */
 @media (max-width: 800px) {
-    .header-nav-item,
-    .header-social-button{
-        display: none;
+    .responsive-title{
+        margin-top:20px;
     }
-    .header-responsive{
-        display: initial;
+    .nav-left, .nav-right, .nav-center{
+        text-align: center;
+        margin-bottom:20px;
     }
-
-    .index-description{
-        margin-top: 50px;
-        width: auto;
-        height: calc(100vh - 180px);
-    }
-    .projects{
-        margin-top: 0px;
-        width: auto;
-        height: calc(100vh - 130px);
+    .experience, .learning {
+        margin-right: 0px;
+        margin-left: 0px;
     }
 }
 
 /* ---------- 4. Extra small devices ---- */
 @media (max-width: 460px){
+    .projects-link{
+        display: inline-block;
+        top:-10px;
+    }
 }
