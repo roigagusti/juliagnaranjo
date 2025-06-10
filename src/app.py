@@ -31,8 +31,10 @@ def index():
 def projects():
     with open('./src/static/data/main.json', 'r', encoding='utf-8') as f:
         main_data = json.load(f)
+
     with open('./src/static/data/projects.json', 'r', encoding='utf-8') as f:
         projects_data = json.load(f)
+    projects_data.sort(key=lambda x: x['order'])
     return render_template('work.html', active="projects", main=main_data, projects=projects_data)
 
 @app.route('/teach')
@@ -41,6 +43,7 @@ def teach():
         main_data = json.load(f)
     with open('./src/static/data/teach.json', 'r', encoding='utf-8') as f:
         teach_data = json.load(f)
+    teach_data.sort(key=lambda x: x['order'])
     return render_template('work.html', active="teach", main=main_data, projects=teach_data)
 
 

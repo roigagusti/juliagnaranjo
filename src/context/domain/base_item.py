@@ -7,6 +7,7 @@ class BaseItem:
     description: str
     year: str
     status: str
+    order: int
 
     def to_dict(self) -> dict:
         return {
@@ -15,4 +16,5 @@ class BaseItem:
             "description": self.description,
             "year": self.year,
             "status": self.status,
+            "order": self.order,
         }

@@ -109,10 +109,11 @@ class NotionClient:
             description = safe_get(props, ["Description", "rich_text", 0, "text", "content"], "")
             year = safe_get(props, ["Year", "number"], "")
             status = safe_get(props, ["Status", "select", "name"], "")
+            order = safe_get(props, ["Order", "number"], 0)
 
             if status != "Active":
                 continue
-            teach = Teach(id, title, description, year, status)
+            teach = Teach(id, title, description, year, status, order)
             teaches.append(teach)
 
         return teaches
@@ -130,10 +131,11 @@ class NotionClient:
             description = safe_get(props, ["Description", "rich_text", 0, "text", "content"], "")
             year = safe_get(props, ["Year", "number"], "")
             status = safe_get(props, ["Status", "select", "name"], "")
+            order = safe_get(props, ["Order", "number"], 0)
 
             if status != "Active":
                 continue
-            project = Project(id, title, description, year, status)
+            project = Project(id, title, description, year, status, order)
             projects.append(project)
 
         return projects
