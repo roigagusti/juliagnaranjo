@@ -1,7 +1,7 @@
 import requests
 from typing import Any, Dict, List, Optional, Union
 
-from context.domain.main import Main
+from context.domain.main import Main, Navbar
 from context.domain.teach import Teach
 from context.domain.project import Project
 
@@ -63,22 +63,38 @@ class NotionClient:
         """Actualiza el valor si el status es 'Active' y el nombre coincide."""
         return text if status == 'Active' and name == find else current
 
-    def parse_main(self, response: Dict[str, Any]) -> List[Main]:
-        """Analiza la respuesta para construir la entidad Main."""
-        mains: List[Main] = []
-        if not response.get("results"):
-            return mains
+    def parse_main(self, response: Dict[str, Any]) -> Main:
+        """Analiza la respuesta y construye la entidad Main."""
+        logo = ""
+        bio = ""
+        teach = ""
+        projects = ""
+        text_value = ""
 
-        for item in response["results"]:
+        for item in response.get("results", []):
             props = item.get("properties", {})
-            id = item.get("id", "")
-            type = safe_get(props, ["Type", "select", "name"], "")
+            type_ = safe_get(props, ["Type", "select", "name"], "")
             text = safe_get(props, ["Text", "rich_text", 0, "text", "content"], "")
             status = safe_get(props, ["Status", "select", "name"], "")
-            main = Main(id, type, text, status)
-            mains.append(main)
-            
-        return mains
+
+            if status != "Active":
+                continue
+
+            if type_ == "Logo":
+                logo = text
+            elif type_ == "Button":
+                lowered = text.lower()
+                if "bio" in lowered:
+                    bio = text
+                elif "teach" in lowered:
+                    teach = text
+                else:
+                    projects = text
+            elif type_ == "Text":
+                text_value = text
+
+        navbar = Navbar(bio=bio, teach=teach, projects=projects)
+        return Main(logo=logo, navbar=navbar, text=text_value)
 
     def parse_teaches(self, response: Dict[str, Any]) -> List[Teach]:
         """Analiza la respuesta para construir una lista de entidades Experience."""
@@ -104,7 +120,7 @@ class NotionClient:
         if not response.get("results"):
             return projects
 
-        for item in response["results"]:
+        for item in response["results"]:    
             props = item.get("properties", {})
             id = item.get("id", "")
             title = safe_get(props, ["Title", "title", 0, "text", "content"], "")

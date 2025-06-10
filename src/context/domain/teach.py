@@ -1,18 +1,8 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from .base_item import BaseItem
+
 
 @dataclass
-class Teach:
-    id: str
-    title: str
-    description: str
-    year: str
-    status: str
-
-    def to_dict(self):
-        return {
-            "id": self.id,
-            "title": self.title,
-            "description": self.description,
-            "year": self.year,
-            "status": self.status,
-        }
+class Teach(BaseItem):
+    """Represents a teaching entry."""
+    pass

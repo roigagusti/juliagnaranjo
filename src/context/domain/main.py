@@ -1,17 +1,22 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
+
+
+@dataclass
+class Navbar:
+    bio: str
+    teach: str
+    projects: str
+
 
 @dataclass
 class Main:
-    id: str
-    type: str
+    logo: str
+    navbar: Navbar
     text: str
-    status: str
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         return {
-            "id": self.id,
-            "type": self.type,
+            "logo": self.logo,
+            "navbar": asdict(self.navbar),
             "text": self.text,
-            "status": self.status,
         }
-        

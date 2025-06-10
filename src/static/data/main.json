@@ -1,32 +1,9 @@
-[
-  {
-    "id": "54dd7047-3b1c-45fb-a472-45565cf1bdfd",
-    "type": "Logo",
-    "text": "J",
-    "status": "Active"
+{
+  "logo": "J",
+  "navbar": {
+    "bio": "Bio",
+    "teach": "Teaching at University",
+    "projects": "Projects"
   },
-  {
-    "id": "4131d26d-b620-4d17-aef1-0114f67ddab0",
-    "type": "Button",
-    "text": "Teaching at University",
-    "status": "Active"
-  },
-  {
-    "id": "ce26b4b7-92cb-4ae5-962f-21b3330e9396",
-    "type": "Button",
-    "text": "Projects",
-    "status": "Active"
-  },
-  {
-    "id": "566de01e-af7b-45e2-99b5-23a0cebd9502",
-    "type": "Button",
-    "text": "Bio",
-    "status": "Active"
-  },
-  {
-    "id": "8f97786f-0cec-4246-b03b-e38eb5a6a85f",
-    "type": "Text",
-    "text": "I am co-director and professor of the Fashion Communication Master's program at the University of Barcelona. I have trained at the Ecole du Louvre (Paris), the Institut Français de la Mode (Paris), and the Elisava School of Design in Barcelona. Currently, I work as an independent consultant in communication and creative strategy, building internal teams and guiding brands in how they shape their narrative and cultural impact.\n\nI am particularly interested in the role of culture within a brand, from internal communication to brand cultural initiatives, which led me to coordinate and teach the Brand Culture postgraduate program at Elisava.",
-    "status": "Active"
-  }
-]
+  "text": "I am co-director and professor of the Fashion Communication Master's program at the University of Barcelona. I have trained at the Ecole du Louvre (Paris), the Institut Français de la Mode (Paris), and the Elisava School of Design in Barcelona. Currently, I work as an independent consultant in communication and creative strategy, building internal teams and guiding brands in how they shape their narrative and cultural impact.\n\nI am particularly interested in the role of culture within a brand, from internal communication to brand cultural initiatives, which led me to coordinate and teach the Brand Culture postgraduate program at Elisava."
+}

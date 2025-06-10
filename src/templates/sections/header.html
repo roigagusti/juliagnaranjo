@@ -2,13 +2,13 @@
     <div class="header-logo">{{ main.logo }}</div>
     <div class="header-nav">
         <a href="/">
-            <div class="header-nav-item {{ 'active' if active == 'bio' else '' }}">{{ main.bio }}</div>
+            <div class="header-nav-item {{ 'active' if active == 'bio' else '' }}">{{ main.navbar.bio }}</div>
         </a>
         <a href="/projects">
-            <div class="header-nav-item {{ 'active' if active == 'projects' else '' }}">{{ main.projects }}</div>
+            <div class="header-nav-item {{ 'active' if active == 'projects' else '' }}">{{ main.navbar.projects }}</div>
         </a>
         <a href="/teach">
-            <div class="header-nav-item {{ 'active' if active == 'teach' else '' }}">{{ main.teach }}</div>
+            <div class="header-nav-item {{ 'active' if active == 'teach' else '' }}">{{ main.navbar.teach }}</div>
         </a>
         <a href="https://www.instagram.com/julianaranjo.g/" target="_blank">
             <div class="header-social-button">

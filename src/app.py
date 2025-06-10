@@ -51,7 +51,7 @@ def api_update():
     
     main_obj = main_service.get_main()
     with open('./src/static/data/main.json', 'w', encoding='utf-8') as f:
-        json.dump([m.to_dict() for m in main_obj], f, ensure_ascii=False, indent=2)
+        json.dump(main_obj.to_dict(), f, ensure_ascii=False, indent=2)
     
     teach_list = teach_service.getTeachs()
     with open('./src/static/data/teach.json', 'w', encoding='utf-8') as f:
