@@ -109,6 +109,9 @@ class NotionClient:
             description = safe_get(props, ["Description", "rich_text", 0, "text", "content"], "")
             year = safe_get(props, ["Year", "number"], "")
             status = safe_get(props, ["Status", "select", "name"], "")
+
+            if status != "Active":
+                continue
             teach = Teach(id, title, description, year, status)
             teaches.append(teach)
 
@@ -127,6 +130,9 @@ class NotionClient:
             description = safe_get(props, ["Description", "rich_text", 0, "text", "content"], "")
             year = safe_get(props, ["Year", "number"], "")
             status = safe_get(props, ["Status", "select", "name"], "")
+
+            if status != "Active":
+                continue
             project = Project(id, title, description, year, status)
             projects.append(project)
 
