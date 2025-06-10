@@ -2,13 +2,16 @@ from dataclasses import dataclass
 
 @dataclass
 class Main:
-    title: str
-    basedin: str
-    experience: str
-    projects: str
-    contact: str
-    experience_title_1: str
-    experience_title_2: str
-    experience_title_3: str
-    experience_title_4: str
-    up: str
+    id: str
+    type: str
+    text: str
+    status: str
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "type": self.type,
+            "text": self.text,
+            "status": self.status,
+        }
+        
