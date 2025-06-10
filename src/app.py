@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, url_for
 from context.infrastructure.notion_client import NotionClient
 from context.services.main_service import MainService
-from context.services.experience_service import ExperienceService
+from context.services.teach_service import TeachService
 from context.services.project_service import ProjectService
 
 import os
@@ -12,49 +12,59 @@ app = Flask(__name__)
 
 NOTION_AUTH_TOKEN = os.getenv("NOTION_AUTH_TOKEN")
 MAIN_DB_ID = os.getenv("MAIN_DB_ID")
-EXP_DB_ID = os.getenv("EXP_DB_ID")
+TEACH_DB_ID = os.getenv("TEACH_DB_ID")
 PROJECT_DB_ID = os.getenv("PROJECT_DB_ID")
 
 notion_client = NotionClient(NOTION_AUTH_TOKEN)
 main_service = MainService(notion_client, MAIN_DB_ID)
-experience_service = ExperienceService(notion_client, EXP_DB_ID)
+teach_service = TeachService(notion_client, TEACH_DB_ID)
 project_service = ProjectService(notion_client, PROJECT_DB_ID)
 
 # Simple page
 @app.route('/')
 def index():
-    return render_template('index.html', active="bio")
-
-@app.route('/work')
-def work():
-    with open('./static/data/work.json', 'r') as f:
-        work_data = json.load(f)
-    return render_template('work.html', active="work", projects=work_data)
-
-@app.route('/teach')
-def teach():
-    with open('./static/data/teach.json', 'r') as f:
-        teach_data = json.load(f)
-    return render_template('work.html', active="teach", projects=teach_data)
-
-
-# OLD Page
-@app.route('/home')
-def home():
-    main_data = main_service.get_main()
-    return render_template('home.html', main=main_data)
-
-@app.route('/experience')
-def experience():
-    experiences_data = experience_service.get_experiences()
-    back_link = request.args.get('from') and url_for('index', for_=request.args.get('from')) or url_for('index')
-    return render_template('experience.html', work=experiences_data, back_link=back_link)
+    with open('./src/static/data/main.json', 'r', encoding='utf-8') as f:
+        main_data = json.load(f)
+    return render_template('index.html', active="bio", main=main_data)
 
 @app.route('/projects')
 def projects():
-    projects_data = project_service.get_projects()
-    on_julia = True
-    return render_template('projects.html', projects=projects_data, on_julia=on_julia)
+    with open('./src/static/data/main.json', 'r', encoding='utf-8') as f:
+        main_data = json.load(f)
+
+    with open('./src/static/data/projects.json', 'r', encoding='utf-8') as f:
+        projects_data = json.load(f)
+    projects_data.sort(key=lambda x: x['order'])
+    return render_template('work.html', active="projects", main=main_data, projects=projects_data)
+
+@app.route('/teach')
+def teach():
+    with open('./src/static/data/main.json', 'r', encoding='utf-8') as f:
+        main_data = json.load(f)
+    with open('./src/static/data/teach.json', 'r', encoding='utf-8') as f:
+        teach_data = json.load(f)
+    teach_data.sort(key=lambda x: x['order'])
+    return render_template('work.html', active="teach", main=main_data, projects=teach_data)
+
+
+# API
+@app.route('/api/update')
+def api_update():
+    os.makedirs('./src/static/data', exist_ok=True)
+    
+    main_obj = main_service.get_main()
+    with open('./src/static/data/main.json', 'w', encoding='utf-8') as f:
+        json.dump(main_obj.to_dict(), f, ensure_ascii=False, indent=2)
+    
+    teach_list = teach_service.getTeachs()
+    with open('./src/static/data/teach.json', 'w', encoding='utf-8') as f:
+        json.dump([t.to_dict() for t in teach_list], f, ensure_ascii=False, indent=2)
+    
+    projects_list = project_service.get_projects()
+    with open('./src/static/data/projects.json', 'w', encoding='utf-8') as f:
+        json.dump([p.to_dict() for p in projects_list], f, ensure_ascii=False, indent=2)
+    
+    return "Se han actualizado todas las tablas."
 
 
 

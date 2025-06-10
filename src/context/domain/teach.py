@@ -3,6 +3,6 @@ from .base_item import BaseItem
 
 
 @dataclass
-class Project(BaseItem):
-    """Represents a project entry."""
+class Teach(BaseItem):
+    """Represents a teaching entry."""
     pass

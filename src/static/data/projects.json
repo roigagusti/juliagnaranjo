@@ -1,0 +1,16 @@
+[
+  {
+    "id": "20e2acd7-f3a1-80f6-a08f-d66e00227a3a",
+    "title": "Barça",
+    "description": "Dcb",
+    "year": 2025,
+    "status": "Disabled"
+  },
+  {
+    "id": "20e2acd7-f3a1-8028-b0ba-c4c120bbda17",
+    "title": "Loewe",
+    "description": "Abc",
+    "year": 2024,
+    "status": "Active"
+  }
+]

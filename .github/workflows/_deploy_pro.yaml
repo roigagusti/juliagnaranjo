@@ -19,7 +19,7 @@ on:
         required: true
       MAIN_DB_ID:
         required: true
-      EXP_DB_ID:
+      TEACH_DB_ID:
         required: true
       PROJECT_DB_ID:
         required: true
@@ -63,7 +63,7 @@ jobs:
               -e FLASK_RUN_HOST=0.0.0.0 \
               -e NOTION_AUTH_TOKEN=${{ secrets.NOTION_AUTH_TOKEN }} \
               -e MAIN_DB_ID=${{ secrets.MAIN_DB_ID }} \
-              -e EXP_DB_ID=${{ secrets.EXP_DB_ID }} \
+              -e TEACH_DB_ID=${{ secrets.TEACH_DB_ID }} \
               -e PROJECT_DB_ID=${{ secrets.PROJECT_DB_ID }} \
               roigagusti/julianaranjo:latest \
               poetry run flask run

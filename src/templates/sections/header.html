@@ -1,14 +1,14 @@
 <section class="header">
-    <div class="header-logo">J</div>
+    <div class="header-logo">{{ main.logo }}</div>
     <div class="header-nav">
         <a href="/">
-            <div class="header-nav-item {{ 'active' if active == 'bio' else '' }}">Bio</div>
+            <div class="header-nav-item {{ 'active' if active == 'bio' else '' }}">{{ main.navbar.bio }}</div>
         </a>
-        <a href="/work">
-            <div class="header-nav-item {{ 'active' if active == 'work' else '' }}">Projects</div>
+        <a href="/projects">
+            <div class="header-nav-item {{ 'active' if active == 'projects' else '' }}">{{ main.navbar.projects }}</div>
         </a>
         <a href="/teach">
-            <div class="header-nav-item {{ 'active' if active == 'teach' else '' }}">Teaching at University</div>
+            <div class="header-nav-item {{ 'active' if active == 'teach' else '' }}">{{ main.navbar.teach }}</div>
         </a>
         <a href="https://www.instagram.com/julianaranjo.g/" target="_blank">
             <div class="header-social-button">
@@ -38,7 +38,7 @@
     <div class="responsive-menu">
         <ul>
             <li><a href="/">Bio</a></li>
-            <li><a href="/work">Projects</a></li>
+            <li><a href="/projects">Projects</a></li>
             <li><a href="/teach">Teaching at University</a></li>
         </ul>
     </div>

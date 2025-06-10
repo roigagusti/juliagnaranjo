@@ -1,9 +1,0 @@
-# ignore ALL .log files
-*.log
-
-# ignore ALL files in ANY directory named ...
-[old]/
-conexiones/private.php
-conexiones/conexion.php
-conexiones/classes2.php
-index2.php

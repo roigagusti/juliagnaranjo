@@ -7,8 +7,7 @@
     {% include 'sections/header.html' %}
 
     <section class="index-description">
-        I am co-director and professor of the Fashion Communication Master's program at the University of Barcelona. I have trained at the Ecole du Louvre (Paris), the Institut Français de la Mode (Paris), and the Elisava School of Design in Barcelona. Currently, I work as an independent consultant in communication and creative strategy, building internal teams and guiding brands in how they shape their narrative and cultural impact.<br><br>
-        I am particularly interested in the role of culture within a brand, from internal communication to brand cultural initiatives, which led me to coordinate and teach the Brand Culture postgraduate program at Elisava.
+        {{ main.text | replace('\n', '<br>') | safe }}
     </section>
     
 </div>
