@@ -22,5 +22,5 @@ jobs:
       SSH_PORT: ${{ secrets.SSH_PORT }}
       NOTION_AUTH_TOKEN: ${{ secrets.NOTION_AUTH_TOKEN }}
       MAIN_DB_ID: ${{ secrets.MAIN_DB_ID }}
-      EXP_DB_ID: ${{ secrets.EXP_DB_ID }}
+      TEACH_DB_ID: ${{ secrets.TEACH_DB_ID }}
       PROJECT_DB_ID: ${{ secrets.PROJECT_DB_ID }}
