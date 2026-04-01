@@ -1,16 +1,66 @@
 [
   {
-    "id": "20e2acd7-f3a1-80f6-a08f-d66e00227a3a",
-    "title": "Barça",
-    "description": "Dcb",
+    "id": "20e2acd7-f3a1-800e-8565-fce5709b0621",
+    "title": "Puig Heritage",
+    "description": "Brand narrative and cultural positioning for Nina Ricci, Dries Van Noten, Paco Rabanne, and Byredo.",
     "year": 2025,
-    "status": "Disabled"
+    "status": "Active",
+    "order": 1
   },
   {
     "id": "20e2acd7-f3a1-8028-b0ba-c4c120bbda17",
-    "title": "Loewe",
-    "description": "Abc",
+    "title": "Dior",
+    "description": "Cultural immersion programme — translating the founder's Parisian legacy into a commercial tool for Latin American sales teams",
     "year": 2024,
-    "status": "Active"
+    "status": "Active",
+    "order": 4
+  },
+  {
+    "id": "20e2acd7-f3a1-802c-8fa6-d355d7b64468",
+    "title": "Dior",
+    "description": "Archive research into the founder's historical muses — translating his sensibility and floral codes into a framework for contemporary brand ambassadors and retail narrative.",
+    "year": 2025,
+    "status": "Active",
+    "order": 3
+  },
+  {
+    "id": "20e2acd7-f3a1-8036-8210-c2f569a42c86",
+    "title": "Carolina Herrera",
+    "description": "Launch strategy, brand architecture and archetype redefinition across fragrance and beauty — Good Girl, Bad Boy and the first makeup line.",
+    "year": 2023,
+    "status": "Active",
+    "order": 8
+  },
+  {
+    "id": "20e2acd7-f3a1-8055-89a4-f32b56e7af08",
+    "title": "Dior",
+    "description": "Conceptual reframing of Sauvage's founding imagery — Niagara Falls as symbolic axis for internal brand activation.",
+    "year": 2025,
+    "status": "Active",
+    "order": 2
+  },
+  {
+    "id": "20e2acd7-f3a1-805c-bd93-d533647352c7",
+    "title": "Tous",
+    "description": "Cultural ecosystem — academic chair with Elisava, institutional alliances with Palais de Tokyo and Alzueta Gallery.",
+    "year": 2023,
+    "status": "Active",
+    "order": 7
+  },
+  {
+    "id": "20e2acd7-f3a1-80b3-88be-fd37b727705f",
+    "title": "Mango",
+    "description": "Five-year retail and brand territory strategy, three continents..",
+    "year": 2024,
+    "status": "Active",
+    "order": 6
+  },
+  {
+    "id": "20e2acd7-f3a1-80f6-a08f-d66e00227a3a",
+    "title": "Loewe",
+    "description": "Cultural cartography for Asian market positioning — identifying latent brand codes to activate new product and retail territory.\n",
+    "year": 2024,
+    "status": "Active",
+    "order": 5
   }
 ]

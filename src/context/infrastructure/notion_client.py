@@ -24,6 +24,25 @@ def safe_get(data: Any, keys: List[Union[str, int]], default: Any = "") -> Any:
             return default
     return data
 
+
+def extract_plain_text(items: Any) -> str:
+    if not isinstance(items, list):
+        return ""
+
+    parts: List[str] = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        plain_text = item.get("plain_text")
+        if plain_text:
+            parts.append(plain_text)
+            continue
+        content = safe_get(item, ["text", "content"], "")
+        if content:
+            parts.append(content)
+
+    return "".join(parts)
+
 class NotionClient:
     def __init__(self, auth_token: str):
         self.auth_token = auth_token
@@ -41,6 +60,17 @@ class NotionClient:
             response = requests.get(url, headers=headers, verify=False)
         response.raise_for_status()
         return response.json()
+
+    def create_page(self, database_id: str, properties: Dict[str, Any]) -> Dict[str, Any]:
+        payload = {
+            "parent": {"database_id": database_id},
+            "properties": properties,
+        }
+        return self.request(
+            "https://api.notion.com/v1/pages",
+            method="POST",
+            payload=payload,
+        )
 
     def filter(self, property_name: str, filter_type: str, filter_value: str) -> Dict[str, Any]:
         """Genera un filtro para la consulta a Notion."""
@@ -68,13 +98,14 @@ class NotionClient:
         logo = ""
         bio = ""
         teach = ""
+        glosa = "Glosa"
         projects = ""
         text_value = ""
 
         for item in response.get("results", []):
             props = item.get("properties", {})
             type_ = safe_get(props, ["Type", "select", "name"], "")
-            text = safe_get(props, ["Text", "rich_text", 0, "text", "content"], "")
+            text = extract_plain_text(safe_get(props, ["Text", "rich_text"], []))
             status = safe_get(props, ["Status", "select", "name"], "")
 
             if status != "Active":
@@ -88,12 +119,14 @@ class NotionClient:
                     bio = text
                 elif "teach" in lowered:
                     teach = text
+                elif "glosa" in lowered:
+                    glosa = text
                 else:
                     projects = text
             elif type_ == "Text":
                 text_value = text
 
-        navbar = Navbar(bio=bio, teach=teach, projects=projects)
+        navbar = Navbar(bio=bio, teach=teach, glosa=glosa, projects=projects)
         return Main(logo=logo, navbar=navbar, text=text_value)
 
     def parse_teaches(self, response: Dict[str, Any]) -> List[Teach]:
@@ -105,8 +138,8 @@ class NotionClient:
         for item in response["results"]:    
             props = item.get("properties", {})
             id = item.get("id", "")
-            title = safe_get(props, ["Title", "title", 0, "text", "content"], "")
-            description = safe_get(props, ["Description", "rich_text", 0, "text", "content"], "")
+            title = extract_plain_text(safe_get(props, ["Title", "title"], []))
+            description = extract_plain_text(safe_get(props, ["Description", "rich_text"], []))
             year = safe_get(props, ["Year", "number"], "")
             status = safe_get(props, ["Status", "select", "name"], "")
             order = safe_get(props, ["Order", "number"], 0)
@@ -127,8 +160,8 @@ class NotionClient:
         for item in response["results"]:    
             props = item.get("properties", {})
             id = item.get("id", "")
-            title = safe_get(props, ["Title", "title", 0, "text", "content"], "")
-            description = safe_get(props, ["Description", "rich_text", 0, "text", "content"], "")
+            title = extract_plain_text(safe_get(props, ["Title", "title"], []))
+            description = extract_plain_text(safe_get(props, ["Description", "rich_text"], []))
             year = safe_get(props, ["Year", "number"], "")
             status = safe_get(props, ["Status", "select", "name"], "")
             order = safe_get(props, ["Order", "number"], 0)
@@ -139,3 +172,32 @@ class NotionClient:
             projects.append(project)
 
         return projects
+
+    def parse_glosa_content(self, response: Dict[str, Any]) -> Dict[str, str]:
+        content = {
+            "text": "",
+            "link_label": "",
+            "link_url": "",
+        }
+
+        if not response.get("results"):
+            return content
+
+        for item in response["results"]:
+            props = item.get("properties", {})
+            title = extract_plain_text(safe_get(props, ["Title", "title"], [])).strip()
+            description = extract_plain_text(safe_get(props, ["Description", "rich_text"], []))
+            status = safe_get(props, ["Status", "select", "name"], "").strip()
+
+            if status.lower() != "active":
+                continue
+
+            lowered_title = title.lower()
+            if lowered_title == "main text":
+                content["text"] = description
+            elif lowered_title == "link label":
+                content["link_label"] = description
+            elif lowered_title == "link url":
+                content["link_url"] = description
+
+        return content

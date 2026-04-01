@@ -5,6 +5,7 @@ from dataclasses import dataclass, asdict
 class Navbar:
     bio: str
     teach: str
+    glosa: str
     projects: str
 
 

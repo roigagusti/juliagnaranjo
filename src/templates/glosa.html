@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+
+{% block title %}Julia Naranjo | Glosa{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    {% include 'sections/header.html' %}
+
+    <section class="glosa-content">
+        <div class="glosa-description">
+            {{ glosa.text | replace('\n', '<br>') | safe }}
+        </div>
+
+        {% if glosa.link_label and glosa.link_url %}
+        <a class="glosa-link" href="{{ glosa.link_url }}" target="_blank" rel="noopener noreferrer">
+            {{ glosa.link_label }} &#8594;
+        </a>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+{% endblock %}

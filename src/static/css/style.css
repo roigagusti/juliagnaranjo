@@ -31,6 +31,16 @@ Taula de continguts
     src: url('fonts/Romie_Regular.otf'); /* IE9 Compat Modes */
     src: url('fonts/Romie_Regular.otf?#iefix') format('embedded-opentype'), /* IE6-IE8 */
 }
+@font-face {
+    font-family: 'FreightBigLightItalic';
+    src: url('fonts/FreightBigLightItalic.otf');
+    src: url('fonts/FreightBigLightItalic.otf?#iefix') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'FreightText';
+    src: url('fonts/FreightText.otf');
+    src: url('fonts/FreightText.otf?#iefix') format('embedded-opentype');
+}
 
 /* ---------- 2. Estructura ---------- */
 body, header, .content{
@@ -65,8 +75,15 @@ a{
     z-index: 100;
 }
 .header-logo {
+    font-family: 'Jost', sans-serif;
     font-size: 28px;
     font-weight: 500;
+}
+.header-logo-link{
+    color: #000;
+}
+.header-logo-link:hover{
+    cursor: pointer;
 }
 .header-nav a{
     color: #000;
@@ -84,17 +101,10 @@ a{
 .header-nav a:hover{
     color: #666;
 }
-.header-social-button svg:hover{
-    fill: #666;
-    cursor: pointer;
-}
-
-.header-social-button,
 .header-responsive{
     display: inline-block;
     margin-left: 50px;
 }
-.header-social-button svg,
 .header-responsive svg{
     height: 25px;
     width: 25px;
@@ -155,7 +165,7 @@ a{
 
 /* ---------- 4. Index ---------- */
 .index-description{
-    margin-top: 100px;
+    margin-top: 20vh;
     width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -164,17 +174,115 @@ a{
     line-height: 30px;
 }
 
+.portfolio-request{
+    width: 760px;
+    margin: 20vh auto 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-request-title{
+    font-weight: 300;
+    font-size: 12px;
+    color: #999;
+}
+
+.portfolio-request-form{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.portfolio-request-label{
+    font-weight: 300;
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 1.1;
+    color: #333;
+}
+
+.portfolio-request-input{
+    width: 250px;
+    height: 40px;
+    padding: 8px 16px;
+    border: 1px solid #d7d4ce;
+    border-radius: 8px;
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
+    color: #000;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.03);
+}
+
+.portfolio-request-input::placeholder{
+    color: #999;
+}
+
+.portfolio-request-input:focus{
+    outline: none;
+    color: #333;
+}
+
+.portfolio-request-button{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #d7d4ce;
+    border-radius: 8px;
+    background: #fff;
+    color: #999;
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.portfolio-request-button:hover{
+    color: #333;
+    border-color: #333;
+}
+
+.portfolio-request-feedback{
+    margin-top: 18px;
+    font-family: 'Graphik-Regular', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
 /* ---------- 5. Projects ---------- */
-.projects{
-    margin-top: 60px;
+.projects-page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-layout{
     width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    height: calc(100vh - 225px);
+    margin: 0 auto 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+    min-height: 0;
+}
+
+.projects{
+    width: 700px;
+    margin: 0px auto 0;
     overflow-y: auto;
     scrollbar-width: none;      /* Oculta la barra en Firefox */
     -ms-overflow-style: none;   /* Oculta la barra en IE 10+ */
 }
+
+.projects-page .projects{
+    width: 100%;
+    height: 68vh;
+    margin: 0;
+}
+
 .projects::-webkit-scrollbar {
     display: none;
 }
@@ -191,4 +299,44 @@ a{
 .project-description{
     font-size: 16px;
     line-height: 24px;
+}
+
+.projects-page .portfolio-request{
+    width: 100%;
+    margin: 44px auto 0;
+    flex-shrink: 0;
+}
+
+.glosa-content{
+    margin-top: 80px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.glosa-description{
+    max-width: 700px;
+    margin-top: 25vh;
+    text-align: left;
+    font-weight: 300;
+    color: #000;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.glosa-link{
+    display: inline-block;
+    margin-top: 50px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #000;
+    color: #000;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.glosa-link:hover{
+    color: #666;
+    border-bottom-color: #666;
 }

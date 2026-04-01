@@ -3,9 +3,25 @@
 {% block title %}Julia Naranjo | Projects{% endblock %}
 
 {% block content %}
-<div class="wrapper">
+<div class="wrapper{% if active == 'projects' %} projects-page{% endif %}">
     {% include 'sections/header.html' %}
 
+    {% if active == 'projects' %}
+    <div class="projects-layout">
+        <section class="projects">
+            {% for project in projects %}
+                <div class="project-card">
+                    <div class="project-title">{{ project.title }}. {{ project.data }}</div>
+                    <div class="project-description">
+                        {{ project.description }}
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+
+        {% include 'sections/portfolio-request.html' %}
+    </div>
+    {% else %}
     <section class="projects">
         {% for project in projects %}
             <div class="project-card">
@@ -16,10 +32,28 @@
             </div>
         {% endfor %}
     </section>
+    {% endif %}
 
 </div>
 {% endblock %}
 
 {% block extra_js %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var successMessage = document.querySelector(".portfolio-request-feedback-success");
+    if (!successMessage) {
+        return;
+    }
+
+    window.setTimeout(function () {
+        successMessage.style.transition = "opacity 0.3s ease";
+        successMessage.style.opacity = "0";
+
+        window.setTimeout(function () {
+            successMessage.remove();
+        }, 300);
+    }, 3000);
+});
+</script>
 {% endblock %}

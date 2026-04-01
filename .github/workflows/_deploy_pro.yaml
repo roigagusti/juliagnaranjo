@@ -21,7 +21,11 @@ on:
         required: true
       TEACH_DB_ID:
         required: true
-      PROJECT_DB_ID:
+      PROJECTS_DB_ID:
+        required: true
+      GLOSA_DB_ID:
+        required: true
+      EMAIL_DB_ID:
         required: true
 
 jobs:
@@ -64,6 +68,8 @@ jobs:
               -e NOTION_AUTH_TOKEN=${{ secrets.NOTION_AUTH_TOKEN }} \
               -e MAIN_DB_ID=${{ secrets.MAIN_DB_ID }} \
               -e TEACH_DB_ID=${{ secrets.TEACH_DB_ID }} \
-              -e PROJECT_DB_ID=${{ secrets.PROJECT_DB_ID }} \
+              -e PROJECTS_DB_ID=${{ secrets.PROJECTS_DB_ID }} \
+              -e GLOSA_DB_ID=${{ secrets.GLOSA_DB_ID }} \
+              -e EMAIL_DB_ID=${{ secrets.EMAIL_DB_ID }} \
               roigagusti/julianaranjo:latest \
               poetry run flask run
