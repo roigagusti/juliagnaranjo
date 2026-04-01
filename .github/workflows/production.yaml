@@ -23,4 +23,6 @@ jobs:
       NOTION_AUTH_TOKEN: ${{ secrets.NOTION_AUTH_TOKEN }}
       MAIN_DB_ID: ${{ secrets.MAIN_DB_ID }}
       TEACH_DB_ID: ${{ secrets.TEACH_DB_ID }}
-      PROJECT_DB_ID: ${{ secrets.PROJECT_DB_ID }}
+      PROJECTS_DB_ID: ${{ secrets.PROJECTS_DB_ID }}
+      GLOSA_DB_ID: ${{ secrets.GLOSA_DB_ID }}
+      EMAIL_DB_ID: ${{ secrets.EMAIL_DB_ID }}

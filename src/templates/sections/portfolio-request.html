@@ -1,0 +1,28 @@
+<section class="portfolio-request">
+    <div class="portfolio-request-title">For the full portfolio, leave your email.</div>
+
+    <form class="portfolio-request-form" action="/portfolio-request" method="post">
+        <input type="hidden" name="next" value="{{ request.path }}">
+        <label class="portfolio-request-label" for="portfolio-email">E-mail</label>
+        <input
+            class="portfolio-request-input"
+            id="portfolio-email"
+            name="email"
+            type="email"
+            placeholder="your@email.com"
+            autocomplete="email"
+            required
+        >
+        <button class="portfolio-request-button" type="submit" aria-label="Send email">
+            <span aria-hidden="true">&#8594;</span>
+        </button>
+    </form>
+
+    {% if form_status == 'sent' %}
+    <div class="portfolio-request-feedback portfolio-request-feedback-success">Thank you, I'll get in touch with you soon.</div>
+    {% elif form_status == 'empty' %}
+    <div class="portfolio-request-feedback">Please enter an email.</div>
+    {% elif form_status == 'error' %}
+    <div class="portfolio-request-feedback">We could not save your email. Please try again.</div>
+    {% endif %}
+</section>

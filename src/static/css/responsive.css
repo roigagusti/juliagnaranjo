@@ -23,8 +23,7 @@ Taula de continguts
 
 /* ---------- 3. Small devices ---- */
 @media (max-width: 800px) {
-    .header-nav-item,
-    .header-social-button{
+    .header-nav-item{
         display: none;
     }
     .header-responsive{
@@ -32,14 +31,42 @@ Taula de continguts
     }
 
     .index-description{
-        margin-top: 50px;
         width: auto;
-        height: calc(100vh - 180px);
+        height: auto;
+    }
+    .portfolio-request{
+        width: auto;
+        margin-top: 15vh;
+        margin-bottom: 30px;
+    }
+    .projects-page .portfolio-request{
+        margin-top: 44px;
+        margin-bottom: 0;
     }
     .projects{
         margin-top: 0px;
         width: auto;
-        height: calc(100vh - 130px);
+        height: calc(100vh - 150px);
+    }
+    .projects-page .projects-layout{
+        width: auto;
+        margin: 0 0 30px;
+        justify-content: flex-start;
+    }
+    .projects-page .projects{
+        height: 70vh;
+    }
+    .glosa-content{
+        margin-top: 50px;
+        width: auto;
+    }
+    .glosa-description{
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    .glosa-link{
+        margin-top: 40px;
+        font-size: 14px;
     }
 }
 
