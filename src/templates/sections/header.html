@@ -1,5 +1,7 @@
 <section class="header">
-    <div class="header-logo">{{ main.logo }}</div>
+    <a href="/" class="header-logo-link">
+        <div class="header-logo">{{ main.logo }}</div>
+    </a>
     <div class="header-nav">
         <a href="/">
             <div class="header-nav-item {{ 'active' if active == 'bio' else '' }}">{{ main.navbar.bio }}</div>

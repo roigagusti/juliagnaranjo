@@ -75,8 +75,15 @@ a{
     z-index: 100;
 }
 .header-logo {
+    font-family: 'Jost', sans-serif;
     font-size: 28px;
     font-weight: 500;
+}
+.header-logo-link{
+    color: #000;
+}
+.header-logo-link:hover{
+    cursor: pointer;
 }
 .header-nav a{
     color: #000;
